@@ -1,0 +1,17 @@
+.title{
+    color: red;
+    font-size: 50px;
+}
+
+.bg_container{
+    background: url("../../assets/frost.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    height: 100vh;
+}
+.bg_container svg{
+    width: 100px;
+    height: 100px;
+}
+.bg_container svg g{
+    fill: yellow    ;
+}
