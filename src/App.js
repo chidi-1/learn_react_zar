@@ -1,34 +1,22 @@
-import HeaderBlock from "./components/HeaderBlock";
-import Header from "./components/Header";
-import Layout from "./components/Layout";
-import Footer from "./components/Footer";
-import LayoutBg from "./assets/img/bg1.jpg"
+import {useState} from "react";
+import HomePage from "./routes/Home";
+import GamePage from "./routes/Game";
 
 const App = () => {
-    return (
-        <>
-            <Header
-                title="This is title"
-                descr="This is Description!"
-            />
-            <Layout
-                title="This is title"
-                descr="This is Description!"
-                urlBg={LayoutBg}
-            />
-            <Layout
-                title="This is title"
-                descr="This is Description!"
-                colorBg="palegoldenrod"
-            />
-            <Layout
-                title="This is title"
-                descr="This is Description!"
-                urlBg={LayoutBg}
-            />
-            <Footer />
-        </>
-    )
-}
+    const   [page, setPage] = useState('app');
+
+    const handleChangePage = (page) => {
+        setPage(page);
+    }
+
+    switch (page) {
+        case "app":
+            return <HomePage onChangePage={handleChangePage} />
+        case "game":
+            return <GamePage onChangePage={handleChangePage} />
+        default:
+            return <HomePage />
+    }
+};
 
 export default App;
