@@ -1,6 +1,6 @@
 import page_style from './style.module.css';
 
-const Layout = ({id, title, descr, urlBg, colorBg}) => {
+const Layout = ({id, title, descr, urlBg, colorBg, children}) => {
     const descr_class = page_style.desc + " " + page_style.full;
     const styleBgColor = colorBg ? {background: `${colorBg}`} : {}
     const styleBgImg = urlBg ? {backgroundImage: `url(${urlBg})`} : {}
@@ -22,9 +22,10 @@ const Layout = ({id, title, descr, urlBg, colorBg}) => {
                             {title && (<h3>{title}</h3>)}
                             <span className={page_style.separator}></span>
                         </div>
-                        {descr && (
+                        {children && (
                             <div className={descr_class}>
-                                <p>{descr}</p>
+                                {children}
+                                {/*<p>{children}</p>*/}
                             </div>
                         )}
                     </article>
