@@ -17,7 +17,7 @@ const HeaderBlock = ({title, hideBg = false,desc}) => {
                 {/*        {title}*/}
                 {/*    </h1>*/}
                 {/*) : null}}*/}
-                // ИЛИ
+                {/*ИЛИ*/}
                 {
                     title && (
                         <h1 className={s.title}>
@@ -25,7 +25,6 @@ const HeaderBlock = ({title, hideBg = false,desc}) => {
                         </h1>
                     )
                 }
-
 
                 <img src={evee} alt="" />
                 {desc && (<p>{desc}</p>)}

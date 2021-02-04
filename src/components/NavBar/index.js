@@ -2,7 +2,7 @@ import  cn from 'classnames';
 
 import page_style from "./style.module.css";
 
-const NavBar  = ({stateMenu, onChangeHamburger}) => {
+const NavBar  = ({stateMenu, onChangeHamburger, bgActive = false}) => {
     const handleClick = () => {
         //onClickButton && onClickButton('game');
         onChangeHamburger && onChangeHamburger();
@@ -10,15 +10,17 @@ const NavBar  = ({stateMenu, onChangeHamburger}) => {
 
     return(
         <>
-            <nav className={page_style.navbar}>
+            <nav id={page_style.navbar} className={cn({
+                [page_style.bgActive] : bgActive
+            })}>
                 <div className={page_style.navWrapper}>
                     <p className={page_style.brand}>
                         LOGO
                     </p>
                     {/*<a className={cn(page_style.menuButton, page_style.active)}>*/}
-                    <a onClick={handleClick} className={cn(page_style.menuButton, {[page_style.active]: stateMenu})}>
+                    <div onClick={handleClick} className={cn(page_style.menuButton, {[page_style.active]: stateMenu})}>
                         <span/>
-                    </a>
+                    </div>
                 </div>
             </nav>
         </>
