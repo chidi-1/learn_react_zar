@@ -30,6 +30,10 @@
 }
 
 /* TODO: This place where we should change :hover on .active */
+.pokemonCard {
+    animate: all 3s ease-in-out;
+    transform: rotateY(180deg);
+}
 .pokemonCard.active {
     transform: rotateY(0deg);
 }

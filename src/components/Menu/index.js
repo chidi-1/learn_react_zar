@@ -1,33 +1,54 @@
+import cn from "classnames";
+import {Link} from "react-router-dom";
+
 import page_style from './style.module.css';
 
-const Menu = ({stateMenu}) => {
+const MENU = [
+    {
+        "title": "HOME",
+        "to": "/"
+    },
+    {
+        "title": "GAME",
+        "to": "/game"
+    },
+    {
+        "title": "ABOUT",
+        "to": "/about"
+    },
+    {
+        "title": "CONTACT  ",
+        "to": "/contact"
+    },
+]
 
-    return(
+const Menu = ({stateMenu, onChangeHamburger}) => {
+    const handleClick = () => {
+        onChangeHamburger && onChangeHamburger();
+    }
+
+    return (
         <>
-            <div className={`${page_style.menuContainer} ${stateMenu ? page_style.active : page_style.deactive}`}>
+            <div className={
+                cn(page_style.menuContainer,
+                    {
+                        [page_style.active]: stateMenu === true,
+                        [page_style.deactive]: stateMenu === false,
+                    })
+            }>
                 <div className={page_style.overlay}/>
                 <div className={page_style.menuItems}>
                     <ul>
-                        <li>
-                            <a href="#welcome">
-                                HOME
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#game">
-                                GAME
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#about">
-                                ABOUT
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#contact">
-                                CONTACT
-                            </a>
-                        </li>
+                        {
+                            MENU.map(({title, to}, index) => (
+                                    <li key={index}>
+                                        <Link to={to} onClick={handleClick}>
+                                            {title}
+                                        </Link>
+                                    </li>
+                                )
+                            )
+                        }
                     </ul>
                 </div>
             </div>
