@@ -11,8 +11,7 @@ const GamePage = ({onChangePage}) => {
     const [isActive, setActive] = useState(POKEMONS);
 
     const handleClickCard = (id) => {
-
-        setActive(prevState => {
+        /*setActive(prevState => {
             return [...prevState].map(POKEMONS => {
                 if (POKEMONS.id === id) {
                     POKEMONS.isActive = !POKEMONS.isActive;
@@ -20,7 +19,14 @@ const GamePage = ({onChangePage}) => {
 
                 return POKEMONS;
             })
+        })*/
+        const newPOKEMONS = POKEMONS.map(pokemon => {
+            if (pokemon.id === id) {
+                pokemon.isActive = !pokemon.isActive;
+            }
         })
+
+        setActive([newPOKEMONS]);
     }
 
     return(
