@@ -10,6 +10,7 @@ import {FireBaseContext} from "../../../../context/FirebaseContext";
 import {PokemonContext} from "../../../../context/pokemonContext";
 
 const StartPage = ({onChangePage}) => {
+
     const firebase = useContext(FireBaseContext);
     const pokemonContext = useContext(PokemonContext);
     const history = useHistory();
