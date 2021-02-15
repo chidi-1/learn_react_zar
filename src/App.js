@@ -7,7 +7,6 @@ import GamePage from "./routes/Game";
 import AboutPage from "./routes/About";
 import ContactPage from "./routes/Contact";
 import NotFoundPage from "./routes/NotFound";
-
 import MenuHeader from "./components/MenuHeader";
 import Footer from "./components/Footer";
 
