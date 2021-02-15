@@ -18,6 +18,7 @@ const HomePage = ({onChangePage}) => {
                 descr="This is Description!"
                 onClickButton = {handleClickButton}
                 pageTarget="game"
+                pageTargetText="Играть"
 
             />
             <Layout

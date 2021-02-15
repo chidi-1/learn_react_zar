@@ -98,9 +98,7 @@ const BoardPage = () => {
         if(steps === 9){
             const [count1,count2] = countWin(board, player1, player2);
 
-            history.replace('/game/finish');
-
-            /*if(count1 > count2){
+            if(count1 > count2){
                 alert('win')
             }
             else if(count1 < count2){
@@ -108,7 +106,7 @@ const BoardPage = () => {
             }
             else{
                 alert('draw')
-            }*/
+            }
         }
     }, [steps]);
 

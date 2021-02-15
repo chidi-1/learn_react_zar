@@ -48,9 +48,9 @@ const StartPage = ({onChangePage}) => {
 
     return (
         <>
-            <Header
+            {/*<Header
                 title="This is GamePage"
-            />
+            />*/}
 
             <Layout
                 title="This is title"
