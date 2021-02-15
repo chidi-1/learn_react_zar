@@ -28,6 +28,9 @@ const GamePage = () => {
     return (
         <PokemonContext.Provider value={{
             pokemons : selectedPokemons,
+            kek2: 3,
+            player2Pokemons : {},
+            winner : 1,
             onSelectedPokemons: handleSelectedPokemons
         }}>
             <Switch>
